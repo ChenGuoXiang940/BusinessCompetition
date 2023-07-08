@@ -18,6 +18,6 @@
 >> * 帶權圖(Weighted Graph)
 >> * 花費(cost)或權重(Weight)
 > ## 圖的表示方式
->> * 鄰接矩陣
->> * 鄰接表
->> * 十字連結串列
+>> * 鄰接矩陣（Adjacency Matrix）二維陣列(int)
+>> * 鄰接表（Adjacency List）unordermap_set + struct(vector+int)
+>> * 十字連結串列（Cross Linked List） 鄰接矩陣和鄰接表的特點，程式碼要寫類別跟結構很長=>少用
