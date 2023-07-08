@@ -21,3 +21,6 @@
 >> * 鄰接矩陣（Adjacency Matrix）:二維陣列(int)
 >> * 鄰接表（Adjacency List）:unordermap_set + struct(vector int + int)
 >> * 十字連結串列（Cross Linked List）:含鄰接矩陣和鄰接表的特點，程式碼要建立類別跟結構=>很花時間，少用
+> ## 圖的搜尋演算法
+>> * 深度優先搜尋(DFS) **迴圈+遞迴**
+>> * 廣度優先搜尋(BFS) **迴圈+佇列Queue**
