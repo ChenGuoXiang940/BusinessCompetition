@@ -3,12 +3,12 @@
 > 本人工科畢業非參與商科競賽的選手，在大學前暑假期間抽空練習題目與留下筆記，盡可能的追求更好的執行效率，覺得不好讓人理解的地方會多補註解。
 ## 圖(Graph)
 > ## 為什麼要有圖?
->> * 串列:一對一，根節點(root)和下一個節點(next)。
->> * 樹:根節點(root)和葉子節點(neighbor),一對多。
->> * 圖:當我們需要多對多,就需要用到圖。
+>> * 串列:根節點(root)和下一個節點(next)，一對多。
+>> * 樹:根節點(root)和葉子節點(neighbor)，一對多。
+>> * 圖:當我們需要多對多，就需要用到圖。
 > ## 圖的基本介紹
->> * 兩個節點相連叫做邊
->> * 節點的邊可以具有零個(指向NULL)或多個邊
+>> * 兩個節點相連叫做邊。
+>> * 節點的邊可以具有零個(指向NULL)或多個邊。
 > ## 圖的常用概念
 >> * 頂點(Vertex)
 >> * 邊(Edge)
@@ -18,6 +18,6 @@
 >> * 帶權圖(Weighted Graph)
 >> * 花費(cost)或權重(Weight)
 > ## 圖的表示方式
->> * 鄰接矩陣（Adjacency Matrix）二維陣列(int)
->> * 鄰接表（Adjacency List）unordermap_set + struct(vector+int)
->> * 十字連結串列（Cross Linked List） 鄰接矩陣和鄰接表的特點，程式碼要寫類別跟結構很長=>少用
+>> * 鄰接矩陣（Adjacency Matrix）:二維陣列(int)
+>> * 鄰接表（Adjacency List）:unordermap_set + struct(vector int + int)
+>> * 十字連結串列（Cross Linked List）:含鄰接矩陣和鄰接表的特點，程式碼要建立類別跟結構=>很花時間，少用
