@@ -13,7 +13,7 @@ int main(){
         stringstream ss(s);
         int word=0;
         int number=0;
-        while (getline(ss,data,' '))
+        while(getline(ss,data,' '))
         {
             if(data.find("S")!=string::npos||data.find("s")!=string::npos)number++;
             word++;
