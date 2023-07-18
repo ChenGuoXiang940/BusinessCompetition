@@ -19,13 +19,13 @@
 >> * 花費(cost)或權重(Weight)
 > ## 圖的表示方式
 >> * 鄰接矩陣（Adjacency Matrix）:二維陣列(int)
->> * 鄰接表（Adjacency List）:unordermap_set + struct(vector int + int)
->> * 十字連結串列（Cross Linked List）:含鄰接矩陣和鄰接表的特點，程式碼要建立類別跟結構=>很花時間，少用
+>> * 鄰接表（Adjacency List）:unordermap_set + struct(vector int + int) 請參考:圖的建立->無向圖
+>> * 十字連結串列（Cross Linked List）:含鄰接矩陣和鄰接表的特點，程式碼要建立類別跟結構=>很花時間，請少用
 > ## 圖的搜尋演算法
 >> * 深度優先搜尋(DFS) **迴圈+遞迴**
 >> * 廣度優先搜尋(BFS) **迴圈+佇列Queue**
 > ## 樹的建立
->> * 二元樹
+>> * **二元樹**<br>實際運用:家族關係、組織結構、文件系統等。
 >> ```cpp
 >> struct TreeNode    //自定義的結構（struct），用於表示二元樹中的節點。
 >> {
@@ -36,21 +36,21 @@
 >> };
 >> ```
 > ## 圖的建立
->> * 無向圖:E代表輸入邊的數量，只需知道a與b連接，不需知道儲存在哪個位置，用unordered_map(無序容器)快速查找。
+>> * **無向圖**<br>實際運用:社交網絡中的朋友關係、城市之間的道路網絡、網絡拓撲等。<br>程式說明:E代表輸入邊的數量，邊沒有方向只需知道a與b連接，不需知道儲存在哪個位置，用unordered_map(無序容器)快速查找。
 >> ```cpp
 >> #include<vector>
 >> #include<unordered_map>
->> struct Data     ////自定義的結構（struct）
+>> struct Data     //自定義的結構（struct）
 >> {
 >>   int val;      //表示節點的值
 >>    vector<int>v;//存儲與節點相關的連接節點值的容器
 >> };
 >> int main(){
->>   unordered_map<int,Data>graph; //建立圖的表示
+>>   unordered_map<int,Data>graph; //建立圖
 >>   for(int j=0;j<E;j++){
 >>       cin>>a>>b;
->>       graph[a].v.push_back(b);  //無向圖，需雙向:a到b亦b到a
->>       graph[b].v.push_back(a);
+>>       graph[a].v.push_back(b);  //無向圖，需雙向
+>>       graph[b].v.push_back(a);  //從節點a到節點b的邊，同時也可以從節點b到節點a
 >>   }
 >> }
 >> ```
