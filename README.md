@@ -19,7 +19,7 @@
 >> * 花費(cost)或權重(Weight)
 > ## 圖的表示方式
 >> * 鄰接矩陣（Adjacency Matrix）:二維陣列(int)
->> * 鄰接表（Adjacency List）:unordermap_set + struct(vector int + int) 請參考:圖的建立->無向圖
+>> * 鄰接表（Adjacency List）:unordermap_set + struct(vector int + int) [請參考:圖的建立->無向圖](https://github.com/chen199940/BusinessCompetition100-111#%E5%9C%96%E7%9A%84%E5%BB%BA%E7%AB%8B)
 >> * 十字連結串列（Cross Linked List）:含鄰接矩陣和鄰接表的特點，程式碼要建立類別跟結構=>很花時間，請少用
 > ## 圖的搜尋演算法
 >> * 深度優先搜尋(DFS) **迴圈+遞迴**
