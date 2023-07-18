@@ -61,7 +61,10 @@
 >> * 演算法在時間與空間的優化取決於具體的應用場景。在某些情況下，優化時間複雜度會導致增加空間複雜度。
 > ## 常見的資料結構
 >> * String
->> * Array
->> * Stack
->> * Queue
+>> * 陣列
+>> * vector
+>> * map
+>> * stack
+>> * queue
+>> * priority_queue
 >> * unordered_map
