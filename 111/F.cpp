@@ -1,18 +1,18 @@
-#include <iostream>
-#include<unordered_map>
+#include<iostream>
+#include<set>
 using namespace std;
 int main() {
     string s;
     string s2;
     getline(cin,s);
     getline(cin,s2);
-    unordered_map<char,bool>fg;
-    for(const auto&item:s2){
-        fg[item]=true;
+    set<char>st;
+    for(const char&item:s2){
+        st.insert(item);
     }
     string result="";
-    for(const auto&item:s){
-        if(!fg[item]){
+    for(const char&item:s){
+        if(!st.count(item)){
             result+=item;
         }
     }

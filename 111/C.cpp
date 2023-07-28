@@ -2,7 +2,7 @@
 using namespace std;
 int main() {
     string s;
-    while(getline(cin,s))
+    while(cin>>s)
     {
         string s2="";
         bool fg=false;

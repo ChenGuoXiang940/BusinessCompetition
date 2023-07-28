@@ -1,4 +1,4 @@
-#include <iostream>
+#include<iostream>
 #include<set>
 using namespace std;
 int main() {
@@ -9,7 +9,7 @@ int main() {
         cin>>data;
         s.insert(data);
     }
-    for(const auto& item:s){
+    for(const int& item:s){
         cout<<item<<endl;
     }
     cin.get();

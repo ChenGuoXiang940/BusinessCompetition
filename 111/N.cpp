@@ -16,12 +16,10 @@ int main() {
     for(int i=1;i<n;i++){
         for(int j=0;j<i;j++){
             if(v[i]>v[j])dp[i]=max(dp[i],dp[j]+1);
-            cout<<dp[i]<<" ";
         }
-        cout<<"\n";
     }
     int result=0;
-    for(int item:dp){
+    for(const int& item:dp){
         result=max(result,item);
     }
     cout<<result<<endl;
