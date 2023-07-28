@@ -21,14 +21,14 @@ string mult(string a,string b){
 }
 string fastpow(string a,int b){
     if(b==0)return "1";
-    string result="1";
+    string r="1";
     while(b!=0)
     {
-        if((b&1)==1)result=mult(result,a);
+        if((b&1)==1)r=mult(r,a);
         a=mult(a,a);
         b>>=1;
     }
-    return result;
+    return r;
 }
 int main(){
     int a,b,n;
