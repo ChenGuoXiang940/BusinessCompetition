@@ -5,26 +5,26 @@ typedef long long ll;
 using namespace std;
 vector<ll>f;
 bool check(ll v){
-    ll m=v%6;
-    if(m!=1&&m!=5)return false;
     ll sq=(ll)sqrt(v);
     for(ll i=5;i<=sq;i+=6){
-        if (v%i==0||v%(i+2)==0)return false;
+        if(v%i==0||v%(i+2)==0)return false;
     }
     return true;
 }
 bool go(ll val){
-    for(int i=0;i<6054;){//f.size()
+    ll sq=sqrt(val);
+    for(int i=0;f[i]<=sq;){
         if(val%f[i]==0)return true;
         else i++;
     }
-    return false;
+    if(val>1)return true;
+    else return false;
 }
 int main(){
     f.push_back(7);
-    for (ll i = 11; i <= 60000; i += 6){
-        if (check(i)) f.push_back(i);
-        if (check(i + 2)) f.push_back(i + 2);
+    for(ll i=11;i<=60000;i+=6){
+        if(check(i))f.push_back(i);
+        if(check(i+2))f.push_back(i+2);
     }
     int n;
     ll val;
@@ -38,6 +38,10 @@ int main(){
         else if(go(val))cout<<"False\n";
         else cout<<"True\n";
     }
+/*
+4
+1024 235 450 245
+*/
     system("Pause");
     return 0;
 }

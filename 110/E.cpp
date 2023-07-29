@@ -1,25 +1,21 @@
 #include<iostream>
 #include<sstream>
 #include<map>
-#include<vector>
 using namespace std;
 int main(){
     map<string,string>mp;
-    string str,data;
+    string s,s1,s2;
     cin.ignore();
-    while(getline(cin,str)){
-        stringstream ss(str);
-        vector<string>v;
-        while(getline(ss,data,' ')){
-            v.push_back(data);
-        }
-        if(v.size()!=2)break;
-        mp[v[0]]=v[1];
-        mp[v[1]]=v[0];
+    while(getline(cin,s)){
+        stringstream ss(s);
+        if(ss.str().empty())break;
+        ss>>s1>>s2;
+        mp[s1]=s2;
+        mp[s2]=s1;
     }
-    while(cin>>str){
-        if(mp.find(str)!=mp.end())cout<<mp[str]<<endl;//找到了
-        else cout<<"eh\r\n";//找不到
+    while(cin>>s){
+        if(mp.find(s)!=mp.end())cout<<mp[s]<<endl;
+        else cout<<"eh\r\n";
     }
     system("Pause");
 /*

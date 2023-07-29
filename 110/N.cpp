@@ -21,9 +21,9 @@ int minEditDistance(const string& word1, const string& word2) {
             if(word1[i-1]==word2[j-1]){
                 dp[i][j]=dp[i-1][j-1];//字母相同，不需要操作
             }else {
-                dp[i][j]=min({dp[i-1][j-1],// 替換
-                                dp[i][j-1],    // 插入
-                                dp[i-1][j]});  // 刪除
+                dp[i][j]=min({dp[i-1][j-1],   // 替換
+                                dp[i][j-1],   // 插入
+                                dp[i-1][j]}); // 刪除
                 dp[i][j]+=1;//執行一次操作
             }
         }

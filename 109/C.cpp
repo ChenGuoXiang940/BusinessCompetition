@@ -1,28 +1,42 @@
 #include<iostream>
+#include<sstream>
 using namespace std;
+string s;
+char del;
+struct Data
+{
+    int y,m,d;
+    Data(){
+        getline(cin,s);
+        stringstream ss(s);
+        ss>>d>>del>>m>>del>>y>>del;
+    }
+};
 int main(){
-    int n,y1,y2,m1,m2,d1,d2;
-    string data;
+    int n;
     cin>>n;
+    cin.ignore();
     for(int i=0;i<n;i++){
-        cin>>data;
-        d1=stoi(data.substr(0,2));
-        m1=stoi(data.substr(3,2));
-        y1=stoi(data.substr(6,4));
-        cin>>data;
-        d2=stoi(data.substr(0,2));
-        m2=stoi(data.substr(3,2));
-        y2=stoi(data.substr(6,4));
-        int ans=y1-y2;
-        if(m1<m2){
-            ans-=1;
-        }
-        else if (m1==m2&&d1<d2)
-        {
-            ans-=1;
-        }
+        Data a=Data();
+        Data b=Data();
+        int ans=a.y-b.y;
+        if(a.m<b.m)ans-=1;
+        else if(a.m==b.m&&a.d<b.d)ans-=1;
         cout<<ans<<endl;
     }
+/*
+5
+01/01/2012 
+10/02/2007 
+09/06/2007 
+28/02/1971 
+12/11/2007 
+01/01/1984 
+28/02/2005 
+29/02/2004 
+12/11/2020 
+01/01/1974 
+*/
     system("Pause");
     return 0;
 }

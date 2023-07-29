@@ -4,11 +4,9 @@
 using namespace std;
 vector<int>f;
 bool check(int v){
-    int m=v%6;
-    if(m!=1&&m!=5)return false;
     int sq=(int)sqrt(v);
     for(int i=5;i<=sq;i+=6){
-        if (v%i==0||v%(i+2)==0)return false;
+        if(v%i==0||v%(i+2)==0)return false;
     }
     return true;
 }
@@ -25,10 +23,10 @@ int bs(int left,int right,int key){
 int main(){
     f.push_back(2);
     f.push_back(3);
-    for(int i = 5; i < 1000; i += 6)
+    for(int i=5;i<1000;i+=6)
     {
         if(check(i))f.push_back(i);
-        if(check(i + 2))f.push_back(i + 2);
+        if(check(i+2))f.push_back(i+2);
     }
     f.insert(f.begin(),1);
     int n,c;
@@ -50,6 +48,12 @@ int main(){
         }
         cout<<n<<" "<<c<<": "<<ans<<endl;
     }
+/*
+21 2
+18 2
+18 18
+100 7
+*/
     system("Pause");
     return 0;
 }
