@@ -1,6 +1,5 @@
 #include<iostream>
 #include<sstream>
-#include<algorithm>
 using namespace std;
 char del;
 struct Data
@@ -15,21 +14,22 @@ struct Data
 void solve(Data* a,Data* b){
     string r="";
     for(int i=0;i<4;i++){
-        r+=to_string(a->num[i]|(~b->num[i]&0xFF))+".";
+        r+=to_string(a->num[i]&b->num[i])+".";
     }
     r.erase(r.end()-1);
     cout<<r<<endl;
 }
 int main() {
     int n;
-    cin>>n;
     string s;
+    cin>>n;
+    cin.ignore();
     for(int i=0;i<n;i++){
-        cin>>s;
+        getline(cin,s);
         stringstream ss(s);
-        Data a=Data(ss);
-        Data b=Data(ss);
-        solve(&a,&b);
+        Data*a=new Data(ss);
+        Data*b=new Data(ss);
+        solve(a,b);
     }
     cin.get();
     return 0;
