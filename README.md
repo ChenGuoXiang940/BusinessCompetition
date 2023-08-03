@@ -3,6 +3,7 @@
 > 本人工科畢業非參與商科競賽的選手，在大學前暑假期間抽空練習題目與留下筆記，盡可能的追求更好的執行效率，覺得不好讓人理解的地方會多補註解。
 ## 圖(Graph)
 > ## 為什麼要有圖?
+>> * 實際運用:城市交通、物流和運輸、生物信息、電子電路設計...等等。
 >> * 串列:根節點(root)和下一個節點(next)。
 >> * 樹:根節點(root)和葉子節點(neighbor)。
 >> * 圖:當我們需要多對多，就需要用到圖。
@@ -10,13 +11,7 @@
 >> * 兩個節點相連叫做邊。
 >> * 節點的邊可以具有零個(指向NULL)或多個邊。
 > ## 圖的常用概念
->> * 頂點(Vertex)
->> * 邊(Edge)
->> * 路徑(Path)
->> * 無向圖(Undirected Graph)
->> * 有向圖(Directed Graph)
->> * 帶權圖(Weighted Graph)
->> * 花費(cost)或權重(Weight)
+>> * 頂點(Vertex)、邊(Edge)、路徑(Path)、無向圖(Undirected Graph)、有向圖(Directed Graph)、帶權圖(Weighted Graph)、花費(cost)或權重(Weight)
 > ## 圖的表示方式
 >> * 鄰接矩陣（Adjacency Matrix）:二維陣列(int)
 >> * 鄰接表（Adjacency List）:unordermap_set + struct(vector int + int) [請參考:圖的建立->無向圖](https://github.com/chen199940/BusinessCompetition100-111#%E5%9C%96%E7%9A%84%E5%BB%BA%E7%AB%8B)
@@ -24,20 +19,10 @@
 > ## 圖的搜尋演算法
 >> * 深度優先搜尋(DFS) **迴圈+遞迴**
 >> * 廣度優先搜尋(BFS) **迴圈+佇列**
-> ## 樹的建立
->> * **二元樹**<br>實際運用:家族關係、組織結構、文件系統等。<br>常用概念:node(節點)、root(根)、parent(父)、degree(孩)、depth(深度)、height(高度)
->> ```cpp
->> struct TreeNode    //自定義的結構（struct），用於表示二元樹中的節點。
->> {
->>    int val;        //表示節點的值
->>    TreeNode* left; //指向左子樹的指針，如果沒有左子樹，則為   nullptr
->>    TreeNode* right;//指向右子樹的指針，如果沒有右子樹，則為   nullptr
->>    TreeNode(int x):val(x),left(nullptr),right(nullptr){}//構造函數
->> };
->> ```
 > ## 圖的建立
->> * **無向圖**<br>實際運用:社交網絡中的朋友關係、城市之間的道路網絡、網絡拓撲等。<br>程式說明:E代表輸入邊的數量，邊沒有方向只需知道a與b連接，不需知道儲存在哪個位置，用unordered_map(無序容器)快速查找。
+>> * **無向圖**<br>實際運用:社交網絡中的朋友關係、城市之間的道路網絡、網絡拓撲等。
 >> ```cpp
+>> /*E代表輸入邊的數量，邊沒有方向只需知道a與b連接，不需知道儲存在哪個位置，用unordered_map(無序容器)快速查找。*/
 >> #include<vector>
 >> #include<unordered_map>
 >> struct Data     //自定義的結構（struct）
@@ -53,6 +38,23 @@
 >>       graph[b].v.push_back(a);  //從節點a到節點b的邊，同時也可以從節點b到節點a
 >>   }
 >> }
+>> ```
+## 樹(Tree)
+> ## 為什麼要有樹?
+>> * 實際運用:家族關係、組織結構、文件系統...等等。
+>> * 延伸觀念:知道前序和中序可用遞迴推出後序。
+> ## 樹的常用概念
+>> node(節點)、root(根)、parent(父)、degree(孩)、depth(深度)、height(高度)
+> ## 樹的建立
+>> **二元樹**
+>> ```cpp
+>> struct TreeNode    //自定義的結構（struct），用於表示二元樹中的節點。
+>> {
+>>    int val;        //表示節點的值
+>>    TreeNode* left; //指向左子樹的指針，如果沒有左子樹，則為   nullptr
+>>    TreeNode* right;//指向右子樹的指針，如果沒有右子樹，則為   nullptr
+>>    TreeNode(int x):val(x),left(nullptr),right(nullptr){}//構造函數
+>> };
 >> ```
 ## 資料結構
 > ## 為什麼要有資料結構?
