@@ -1,28 +1,31 @@
 #include<iostream>
 #include<vector>
-#include<algorithm>
 using namespace std;
 int main() {
-    int n,data;
+    int n;
     cin>>n;
-    vector<int>v;
-    vector<int>dp(n,1);
+    int nums[n];
     for(int i=0;i<n;i++){
-        cin>>data;
-        v.push_back(data);
+        cin>>nums[i];
     }
-    /*動態規劃DP*/
-    //假設如果a>b a=dp[i](用來記錄b在前面所比較而得的個數)+1(b算一個)
+    vector<int>seq;
+    seq.push_back(nums[0]);
     for(int i=1;i<n;i++){
-        for(int j=0;j<i;j++){
-            if(v[i]>v[j])dp[i]=max(dp[i],dp[j]+1);
+        if(nums[i]>seq[seq.size()-1]){
+            seq.push_back(nums[i]);
+        }
+        else{
+            int left=0,right=seq.size()-1;
+            while (left<right)
+            {
+                int mid=left+(right-left)/2;
+                if(seq[i]<nums[mid])left=mid+1;
+                else right=mid;
+            }
+            seq[left]=nums[i];
         }
     }
-    int result=0;
-    for(const int& item:dp){
-        result=max(result,item);
-    }
-    cout<<result<<endl;
+    cout<<seq.size()<<endl;
     cin.get();
     return 0;
 }

@@ -4,7 +4,7 @@ using namespace std;
 typedef long long int ll;
 int main(){
     int n,a;
-    ll total=0,min=1E10;//10^9
+    ll total=0,min=1E10;
     cin>>n;
     fo(n){
         cin>>a;

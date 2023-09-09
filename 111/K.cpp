@@ -1,6 +1,5 @@
 #include<iostream>
 #include<unordered_set>
-#include<math.h>
 using namespace std;
 typedef long long ll;
 int main() {
@@ -18,7 +17,7 @@ int main() {
             set.insert(3);
             n/=3;
         }
-        for(int i=5;i<=sqrt(n);i+=6){
+        for(int i=5;i*i<=n;i+=6){
             while(n%i==0){
                 set.insert(i);
                 n/=i;
@@ -28,7 +27,7 @@ int main() {
                 n/=(i+2);
             }
         }
-        if(n>3)set.insert(n);
+        if(n>1)set.insert(n);
         cout<<text<<":"<<set.size()<<endl;
     }
     cin.get();
